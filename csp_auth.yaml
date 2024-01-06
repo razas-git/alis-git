@@ -1,0 +1,7 @@
+csp_provider:
+  aws:
+    aws_access_key: "AKIASSM5XPGIRAZUFB5Q"
+    aws_secret_key: "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"
+    aws_region: "us-east-2"
+    aws_output: "json"
+  azure: {}  
