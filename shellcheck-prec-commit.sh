@@ -21,7 +21,7 @@ fi
 SHELL_FILES=$(git diff --cached --name-only | grep -E '.sh$')
 
 if [[ -n ${SHELL_FILES} ]] ; then  
- ${BINARY_SHELLCHECK} ${SHELL_FILES} --severity=warning
+ ${BINARY_SHELLCHECK} $(echo ${SHELL_FILES}) --severity=warning
  
   if [[ $? -ne 0  ]]; then 
    echo -e "\nERROC CHECK : check script for ERROR or Warnings" 
