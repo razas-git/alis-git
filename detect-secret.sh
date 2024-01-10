@@ -15,5 +15,11 @@ pip install detect-secrets
     DETECT_SECRETS=~/.local/bin/detect-secrets
     fi
 fi    
- 
+if [[ $(detect-secrets scan | jq -r '.results | keys[]' |wc -l) ]]; then 
+  echo -e "/n================================="
+  echo  "ERROR:Sensitive Information detected"
+  echo -e "=================================\n"
+
 detect-secrets scan | jq -r '.results | .[]'
+ exit 1
+ fi
