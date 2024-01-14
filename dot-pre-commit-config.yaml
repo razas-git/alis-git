@@ -1,0 +1,25 @@
+# https://pre-commit.com for more info
+# https://pre-commit.com/hooks.html for more hooks
+
+repos:
+-  repo: https://github.com/pre-commit/pre_commit-hooks
+    rev: v3.2.0
+    hooks: 
+    - id: trailing-whitespace
+    - id: check-yaml
+    - id: cheeck-added-large-files
+    - id: detect-aws-credentials
+
+- repo: https://github.com/yelp/detect-secrets
+  rev: v1.4.0
+  hooks: 
+  -   id: detect-secrets
+      args: []
+      exclude: '.sh$'     
+
+- repo: local
+    hooks: 
+    -   id: shellcheck
+        name: shellcheck-prec-commit.sh
+        entry: alis-git/shellcheck-prec-commit.sh
+        language: script     
